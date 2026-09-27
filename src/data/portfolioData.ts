@@ -9,7 +9,7 @@ import {
 export const PERSONAL_INFO = {
   name: 'Ardra Sobharaj',
 
-  status: 'AVAILABLE FOR EXPLORATION & PROJECTS',
+  status:  'OPEN TO LEARNING & PROJECTS',
 
   affiliation: 'B.TECH AI & DATA SCIENCE · REVA UNIVERSITY',
 
