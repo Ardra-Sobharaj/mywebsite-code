@@ -17,9 +17,9 @@ export const SkillsSection: React.FC = () => {
           </div>
           <div className="lg:col-span-6">
             <p className="font-sans text-[15px] sm:text-[16px] leading-[1.65] text-[#52545a]">
-              An honest inventory of my operational capabilities. Categorized cleanly by active
-              implementation proficiencies and active conceptual exploration frontiers, free of
-              deceptive percentage bars.
+              A clear overview of my current programming skills and the technologies
+  I am actively exploring as I continue building my foundation in AI and
+  Data Science.
             </p>
           </div>
         </div>
