@@ -10,7 +10,6 @@ interface ProjectsSectionProps {
 export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   onSelectProject,
 }) => {
-  // Interactive state for Smart Door Lock simulator
   const [lockState, setLockState] = useState<'LOCKED' | 'UNLOCKED'>('LOCKED');
 
   const handleSimulateLockToggle = () => {
@@ -18,6 +17,10 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
       prev === 'LOCKED' ? 'UNLOCKED' : 'LOCKED'
     );
   };
+
+  const smartDoorLock = SECONDARY_DOSSIERS[0];
+  const githubPortfolio = SECONDARY_DOSSIERS[1];
+  const graphicsEditor = SECONDARY_DOSSIERS[2];
 
   return (
     <section id="projects" className="py-20 border-t border-[#e6e4df]">
@@ -46,9 +49,9 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         {/* ============================================================ */}
         {/* FEATURED PROJECT: ANEMIA DETECTOR */}
         {/* ============================================================ */}
+
         <div className="border border-[#e6e4df] bg-[#fbfbfa] p-6 sm:p-8 lg:p-10 mb-12">
 
-          {/* Top Metadata */}
           <div className="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-[#eceae5] mb-8">
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-[#121314]" />
@@ -63,7 +66,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             </div>
           </div>
 
-          {/* Project Content */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
 
             {/* Left Column */}
@@ -78,7 +80,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   {FEATURED_DOSSIER.title}
                 </h3>
 
-                {/* Tags */}
                 <div className="flex flex-wrap gap-1.5 mb-6">
                   {FEATURED_DOSSIER.tags.map((tag) => (
                     <span
@@ -90,12 +91,10 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   ))}
                 </div>
 
-                {/* Description */}
                 <p className="font-sans text-[15px] leading-[1.7] text-[#52545a] mb-8">
                   {FEATURED_DOSSIER.summary}
                 </p>
 
-                {/* Important Disclaimer */}
                 <div className="border-l-2 border-[#9e7b4f] bg-[#f6f5f2] px-4 py-3 mb-8">
                   <div className="font-mono text-[10px] tracking-[0.06em] uppercase text-[#8c8d91] mb-1">
                     PROJECT NOTE
@@ -108,7 +107,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                   </p>
                 </div>
 
-                {/* Specs */}
                 <div className="border-t border-b border-[#eceae5] py-3 my-6 divide-y divide-[#eceae5] text-[13px]">
                   {FEATURED_DOSSIER.specs?.map((spec) => (
                     <div
@@ -127,7 +125,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 </div>
               </div>
 
-              {/* Action */}
               <div className="pt-4 flex items-center gap-4">
                 <button
                   id="featured-project-btn"
@@ -141,7 +138,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
               </div>
             </div>
 
-            {/* Right Column - Simple Project Overview */}
+            {/* Right Column */}
             <div className="lg:col-span-5">
               <div className="h-full border border-[#e6e4df] bg-[#f6f5f2] p-6 flex flex-col justify-between">
 
@@ -150,7 +147,6 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                     PROJECT OVERVIEW
                   </div>
 
-                  {/* Simple visual blocks */}
                   <div className="space-y-3">
 
                     <div className="border border-[#e6e4df] bg-[#fbfbfa] p-4">
@@ -206,40 +202,36 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         </div>
 
         {/* ============================================================ */}
-        {/* SUB-PROJECTS */}
+        {/* SECONDARY PROJECTS */}
         {/* ============================================================ */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
           {/* ========================================================== */}
           {/* SMART DOOR LOCK */}
           {/* ========================================================== */}
+
           <div className="border border-[#e6e4df] bg-[#fbfbfa] p-6 sm:p-7 flex flex-col justify-between">
             <div>
 
-              {/* Header */}
               <div className="flex items-center justify-between font-mono text-[10px] tracking-[0.08em] uppercase text-[#8c8d91] pb-4 mb-4 border-b border-[#eceae5]">
-                <span>
-                  {SECONDARY_DOSSIERS[0].dossierNumber}
-                </span>
+                <span>{smartDoorLock.dossierNumber}</span>
 
                 <span className="text-[#121314] font-medium">
-                  {SECONDARY_DOSSIERS[0].badge}
+                  {smartDoorLock.badge}
                 </span>
               </div>
 
-              {/* Category */}
               <div className="font-mono text-[10px] tracking-[0.08em] uppercase text-[#8c8d91] mb-2">
-                {SECONDARY_DOSSIERS[0].category}
+                {smartDoorLock.category}
               </div>
 
-              {/* Title */}
               <h3 className="font-serif text-[24px] sm:text-[28px] text-[#121314] font-normal leading-tight mb-3">
-                {SECONDARY_DOSSIERS[0].title}
+                {smartDoorLock.title}
               </h3>
 
-              {/* Tags */}
               <div className="flex flex-wrap gap-1.5 mb-4">
-                {SECONDARY_DOSSIERS[0].tags.map((tag) => (
+                {smartDoorLock.tags.map((tag) => (
                   <span
                     key={tag}
                     className="font-mono text-[10px] px-2 py-0.5 border border-[#e6e4df] bg-[#fbfbfa] text-[#52545a]"
@@ -249,12 +241,10 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 ))}
               </div>
 
-              {/* Description */}
               <p className="font-sans text-[14px] leading-[1.65] text-[#52545a] mb-6">
-                {SECONDARY_DOSSIERS[0].summary}
+                {smartDoorLock.summary}
               </p>
 
-              {/* Hardware Schematic */}
               <div className="border border-[#e6e4df] bg-[#f6f5f2] p-4 mb-6">
 
                 <div className="flex items-center justify-between font-mono text-[9px] tracking-[0.08em] text-[#8c8d91] uppercase pb-2 mb-3 border-b border-[#e6e4df]">
@@ -323,9 +313,9 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                       )}
                     </div>
                   </button>
+
                 </div>
 
-                {/* Additional Components */}
                 <div className="grid grid-cols-2 gap-2 mt-2 font-mono text-center">
 
                   <div className="bg-[#fbfbfa] border border-[#e6e4df] p-2">
@@ -352,56 +342,49 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
               </div>
             </div>
 
-            {/* Bottom Row */}
             <div className="flex items-center justify-between pt-4 border-t border-[#eceae5]">
 
               <button
-                onClick={() => onSelectProject(SECONDARY_DOSSIERS[0])}
+                onClick={() => onSelectProject(smartDoorLock)}
                 className="font-mono text-[11px] tracking-[0.08em] uppercase text-[#121314] hover:text-[#2a434a] font-medium flex items-center gap-2 cursor-pointer group"
               >
-                <span>
-                  {SECONDARY_DOSSIERS[0].actionLabel}
-                </span>
+                <span>{smartDoorLock.actionLabel}</span>
 
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
               </button>
 
               <span className="font-mono text-[10px] tracking-[0.08em] text-[#8c8d91] uppercase">
-                {SECONDARY_DOSSIERS[0].statusLabel}
+                {smartDoorLock.statusLabel}
               </span>
+
             </div>
           </div>
 
           {/* ========================================================== */}
           {/* GITHUB PORTFOLIO */}
           {/* ========================================================== */}
+
           <div className="border border-[#e6e4df] bg-[#fbfbfa] p-6 sm:p-7 flex flex-col justify-between">
             <div>
 
-              {/* Header */}
               <div className="flex items-center justify-between font-mono text-[10px] tracking-[0.08em] uppercase text-[#8c8d91] pb-4 mb-4 border-b border-[#eceae5]">
-                <span>
-                  {SECONDARY_DOSSIERS[1].dossierNumber}
-                </span>
+                <span>{githubPortfolio.dossierNumber}</span>
 
                 <span className="text-[#121314] font-medium">
-                  {SECONDARY_DOSSIERS[1].badge}
+                  {githubPortfolio.badge}
                 </span>
               </div>
 
-              {/* Category */}
               <div className="font-mono text-[10px] tracking-[0.08em] uppercase text-[#8c8d91] mb-2">
-                {SECONDARY_DOSSIERS[1].category}
+                {githubPortfolio.category}
               </div>
 
-              {/* Title */}
               <h3 className="font-serif text-[24px] sm:text-[28px] text-[#121314] font-normal leading-tight mb-3">
-                {SECONDARY_DOSSIERS[1].title}
+                {githubPortfolio.title}
               </h3>
 
-              {/* Tags */}
               <div className="flex flex-wrap gap-1.5 mb-4">
-                {SECONDARY_DOSSIERS[1].tags.map((tag) => (
+                {githubPortfolio.tags.map((tag) => (
                   <span
                     key={tag}
                     className="font-mono text-[10px] px-2 py-0.5 border border-[#e6e4df] bg-[#fbfbfa] text-[#52545a]"
@@ -411,12 +394,10 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 ))}
               </div>
 
-              {/* Description */}
               <p className="font-sans text-[14px] leading-[1.65] text-[#52545a] mb-6">
-                {SECONDARY_DOSSIERS[1].summary}
+                {githubPortfolio.summary}
               </p>
 
-              {/* Code Box */}
               <div className="border border-[#e6e4df] bg-[#f6f5f2] p-4 mb-6">
 
                 <div className="flex items-center justify-between font-mono text-[9px] tracking-[0.08em] text-[#8c8d91] uppercase pb-2 mb-3 border-b border-[#e6e4df]">
@@ -434,23 +415,106 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
               </div>
             </div>
 
-            {/* Bottom Row */}
             <div className="flex items-center justify-between pt-4 border-t border-[#eceae5]">
 
-              <button
-                onClick={() => onSelectProject(SECONDARY_DOSSIERS[1])}
-                className="font-mono text-[11px] tracking-[0.08em] uppercase text-[#121314] hover:text-[#2a434a] font-medium flex items-center gap-2 cursor-pointer group"
+              <a
+                href={githubPortfolio.actionUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[11px] tracking-[0.08em] uppercase text-[#121314] hover:text-[#2a434a] font-medium flex items-center gap-2 group"
               >
-                <span>
-                  {SECONDARY_DOSSIERS[1].actionLabel}
-                </span>
+                <span>VIEW PROJECT</span>
 
-                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-              </button>
+                <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+              </a>
 
               <span className="font-mono text-[10px] tracking-[0.08em] text-[#8c8d91] uppercase">
-                {SECONDARY_DOSSIERS[1].statusLabel}
+                {githubPortfolio.statusLabel}
               </span>
+
+            </div>
+          </div>
+
+          {/* ========================================================== */}
+          {/* 2D ASCII GRAPHICS EDITOR */}
+          {/* ========================================================== */}
+
+          <div className="border border-[#e6e4df] bg-[#fbfbfa] p-6 sm:p-7 flex flex-col justify-between">
+            <div>
+
+              <div className="flex items-center justify-between font-mono text-[10px] tracking-[0.08em] uppercase text-[#8c8d91] pb-4 mb-4 border-b border-[#eceae5]">
+                <span>{graphicsEditor.dossierNumber}</span>
+
+                <span className="text-[#121314] font-medium">
+                  {graphicsEditor.badge}
+                </span>
+              </div>
+
+              <div className="font-mono text-[10px] tracking-[0.08em] uppercase text-[#8c8d91] mb-2">
+                {graphicsEditor.category}
+              </div>
+
+              <h3 className="font-serif text-[24px] sm:text-[28px] text-[#121314] font-normal leading-tight mb-3">
+                {graphicsEditor.title}
+              </h3>
+
+              <div className="flex flex-wrap gap-1.5 mb-4">
+                {graphicsEditor.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="font-mono text-[10px] px-2 py-0.5 border border-[#e6e4df] bg-[#fbfbfa] text-[#52545a]"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <p className="font-sans text-[14px] leading-[1.65] text-[#52545a] mb-6">
+                {graphicsEditor.summary}
+              </p>
+
+              {/* ASCII Preview */}
+              <div className="border border-[#e6e4df] bg-[#f6f5f2] p-4 mb-6">
+
+                <div className="flex items-center justify-between font-mono text-[9px] tracking-[0.08em] text-[#8c8d91] uppercase pb-2 mb-3 border-b border-[#e6e4df]">
+                  <span>ASCII CANVAS</span>
+
+                  <span className="text-[#2a434a] font-semibold">
+                    C PROGRAM
+                  </span>
+                </div>
+
+                <pre className="font-mono text-[11px] leading-[1.5] text-[#52545a] overflow-x-auto">
+{`+----------------------+
+|    /\\        ____    |
+|   /  \\      /    \\   |
+|  /____\\    |  ()  |  |
+|            |______|  |
+|                      |
+|  LINE  RECT  CIRCLE  |
++----------------------+`}
+                </pre>
+
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between pt-4 border-t border-[#eceae5]">
+
+              <a
+                href={graphicsEditor.actionUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[11px] tracking-[0.08em] uppercase text-[#121314] hover:text-[#2a434a] font-medium flex items-center gap-2 group"
+              >
+                <span>VIEW PROJECT</span>
+
+                <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+              </a>
+
+              <span className="font-mono text-[10px] tracking-[0.08em] text-[#8c8d91] uppercase">
+                {graphicsEditor.statusLabel}
+              </span>
+
             </div>
           </div>
 
