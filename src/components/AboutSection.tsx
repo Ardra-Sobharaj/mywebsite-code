@@ -12,7 +12,7 @@ export const AboutSection: React.FC = () => {
               01 / ABOUT
             </div>
             <h2 className="font-serif text-[32px] sm:text-[38px] leading-[1.18] tracking-[-0.015em] text-[#121314] font-normal">
-              Curious by nature. Building through practice.
+              Learning by buidling . Building through practice.
             </h2>
           </div>
 
